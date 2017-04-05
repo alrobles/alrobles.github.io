@@ -1,2 +1,3 @@
-name: Angel Robles, geotax project
-	markdown: kramdown
+name: Hank Quinlan, Horrible Cop
+markdown: kramdow
+permalink: /blog/:year/:month/:day/:title

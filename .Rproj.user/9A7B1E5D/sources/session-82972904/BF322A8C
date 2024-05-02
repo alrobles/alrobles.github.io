@@ -3,7 +3,7 @@
     "path": "G:/My Drive/alrobles.github.io/index.xml",
     "project_path": "index.xml",
     "type": "xml",
-    "hash": "3749770959",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1714612335528.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "5,47",
-        "scrollLine": "0"
+        "cursorPosition": "24,6",
+        "scrollLine": "14"
     },
     "folds": "",
-    "lastKnownWriteTime": 1714612403,
+    "lastKnownWriteTime": 1714612668,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1714612403061,
+    "last_content_update": 1714612668785,
     "read_only": false,
     "read_only_alternatives": []
 }

@@ -1,3 +1,0 @@
-install.packages("rstudioapi")
-library(rstudioapi) # to easily navigate to files
-rstudioapi::navigateToFile("config.yaml")

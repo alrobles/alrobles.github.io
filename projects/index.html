@@ -16,14 +16,19 @@
     <meta property="og:url" content="https://alrobles.github.io/projects/">
     <meta property="og:image" content="https://alrobles.github.io/img/profile.png">
 
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Projects | Angel Robles">
+    <meta name="twitter:description" content="Open-source projects: ecological modeling, SDM, sensitivity analysis, scientific computing in C++ and R.">
+    <meta name="twitter:image" content="https://alrobles.github.io/img/profile.png">
+
     <script>
       (function(){
-        try {
-          var saved = localStorage.getItem('theme');
-          if (saved === 'dark' || saved === 'light') {
-            document.documentElement.setAttribute('data-theme', saved);
-          }
-        } catch (e) {}
+        var theme = null;
+        try { theme = localStorage.getItem('theme'); } catch (e) {}
+        if (theme !== 'dark' && theme !== 'light') {
+          theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
   </head>
@@ -38,7 +43,7 @@
             <li><a href="/projects/" aria-current="page">Projects</a></li>
             <li><a href="/cv/cv.pdf">CV</a></li>
             <li>
-              <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
+              <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme" aria-pressed="false" title="Toggle theme">
                 <span class="moon" aria-hidden="true">&#9789;</span>
                 <span class="sun" aria-hidden="true">&#9728;</span>
               </button>
@@ -52,7 +57,7 @@
       <section>
         <div class="container">
           <h1>Projects</h1>
-          <p style="color:var(--muted);max-width:60ch">Open-source tools and research code, mostly in C++ and R, focused on ecological modeling, species distribution modeling, sensitivity analysis, and reproducible scientific workflows.</p>
+          <p class="lead-muted">Open-source tools and research code, mostly in C++ and R, focused on ecological modeling, species distribution modeling, sensitivity analysis, and reproducible scientific workflows.</p>
 
           <h2>Featured</h2>
           <ul class="project-list">
@@ -61,7 +66,7 @@
                 <h3 class="card-title"><a href="https://alrobles.github.io/maxentcpp/">maxentcpp</a></h3>
                 <span class="lang cpp">C++</span>
               </div>
-              <p>A header-light C++ implementation of MaxEnt for species distribution modeling — fast on real ecological datasets and embeddable in larger pipelines.</p>
+              <p>A C++17 reimplementation of MaxEnt for species distribution modeling, with R bindings via Rcpp. Designed to be fast on real ecological datasets and reproducible end to end.</p>
               <div class="card-links">
                 <a href="https://github.com/alrobles/maxentcpp">Source</a>
                 <a href="https://alrobles.github.io/maxentcpp/">Documentation</a>
@@ -145,7 +150,7 @@
 
     <footer class="site-footer">
       <div class="container">
-        <div>&copy; <span id="year">2026</span> Angel L. Robles</div>
+        <div>&copy; 2026 Angel L. Robles</div>
         <div><a href="https://github.com/alrobles/alrobles.github.io">Source on GitHub</a></div>
       </div>
     </footer>
@@ -154,16 +159,17 @@
       (function(){
         var root = document.documentElement;
         var btn = document.getElementById('theme-toggle');
-        if (btn) btn.addEventListener('click', function(){
-          var current = root.getAttribute('data-theme');
-          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (!current) current = prefersDark ? 'dark' : 'light';
-          var next = current === 'dark' ? 'light' : 'dark';
+        if (!btn) return;
+        var sync = function(){
+          btn.setAttribute('aria-pressed', root.getAttribute('data-theme') === 'dark' ? 'true' : 'false');
+        };
+        sync();
+        btn.addEventListener('click', function(){
+          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
           root.setAttribute('data-theme', next);
           try { localStorage.setItem('theme', next); } catch (e) {}
+          sync();
         });
-        var y = document.getElementById('year');
-        if (y) y.textContent = new Date().getFullYear();
       })();
     </script>
   </body>

@@ -8,7 +8,7 @@ Dear Prof. Stocker,
 
 I am applying for the Postdoctoral position in Terrestrial Ecosystem Modelling (geco-004) within the UP-SCALE project. I hold a PhD in Evolutionary Biology from Arizona State University (defended July 2025) and am currently a postdoctoral researcher at the University of Kansas, where I develop demographic species distribution models that integrate stochastic population dynamics with climate variability.
 
-My interest in this position is specific and grounded in concrete technical preparation. Over the past weeks, I have been porting the SOFUN ecosystem model — the Fortran codebase underlying your group's rsofun R package — to modern C++17 under the project name **rsofuncpp** (github.com/alrobles/rsofuncpp). This is not a superficial wrapper. The C++17 port preserves the full mathematical structure of the P-model and BiomeE while adding OpenMP parallelism, a Stan-based Bayesian calibration pipeline, and a CI/CD test suite that validates numerical parity against the original Fortran outputs. I undertook this work because I recognized that UP-SCALE's core challenge — integrating a hydraulics-explicit model (P-hydro) into a vegetation demography model (BiomeEP) — is fundamentally a software architecture problem. The Fortran codebase, while scientifically rigorous, presents barriers to the modular integration, collaborative development, and high-throughput calibration that modern ecosystem modeling demands.
+My interest in this position is specific and grounded in concrete technical preparation. Over the past weeks, I have been porting the SOFUN ecosystem model — the Fortran codebase underlying your group's rsofun R package — to modern C++17 under the project name **rsofuncpp** (github.com/alrobles/rsofuncpp-devel). This is not a superficial wrapper. The C++17 port preserves the full mathematical structure of the P-model and BiomeE while adding OpenMP parallelism, a Stan-based Bayesian calibration pipeline, and a CI/CD test suite that validates numerical parity against the original Fortran outputs. I undertook this work because I recognized that UP-SCALE's core challenge — integrating a hydraulics-explicit model (P-hydro) into a vegetation demography model (BiomeEP) — is fundamentally a software architecture problem. The Fortran codebase, while scientifically rigorous, presents barriers to the modular integration, collaborative development, and high-throughput calibration that modern ecosystem modeling demands.
 
 My qualifications for the specific tasks outlined in the job description rest on three pillars.
 
@@ -30,4 +30,4 @@ Sincerely,
 Ángel L. Robles-Fernández, PhD
 a.l.robles.fernandez@gmail.com
 https://alrobles.github.io
-github.com/alrobles/rsofuncpp
+github.com/alrobles/rsofuncpp-devel

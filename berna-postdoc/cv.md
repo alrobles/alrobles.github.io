@@ -39,7 +39,7 @@ Kansas Biological Survey & Center for Ecological Research | Supervisor: Daniel C
 ## Ecosystem Modeling Projects (Active)
 
 **rsofuncpp** — C++17 port of the SOFUN terrestrial ecosystem model  
-github.com/alrobles/rsofuncpp  
+github.com/alrobles/rsofuncpp-devel  
 - Full C++17 rewrite of the Fortran codebase underlying the `rsofun` R package (stineb/rsofun on CRAN).  
 - Preserves P-model (photosynthesis, Farquhar model) and BiomeE (vegetation demography) mathematical structure.  
 - Architecture designed for modular integration of plant hydraulics (P-hydro).  
